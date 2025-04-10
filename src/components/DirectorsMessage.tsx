@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation"; // 👈 useRouter for App Router
 
 const DirectorsMessage: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <div className="flex flex-col lg:flex-row h-auto lg:h-screen relative">
@@ -30,9 +30,14 @@ const DirectorsMessage: React.FC = () => {
 
       {/* Back Button */}
       <button
-        onClick={() => navigate(-1)}
-        className="absolute top-4 right-4 lg:top-16 lg:right-28 text-gray-500 hover:text-gray-800"
-      >
+  onClick={() => router.back()}
+  aria-label="Go back"
+  title="Go back"
+  className="absolute top-4 right-4 lg:top-16 lg:right-28 text-gray-500 hover:text-gray-800"
+>
+  <i className="fas fa-arrow-left text-2xl lg:text-3xl"></i>
+</button>
+
         <i className="fas fa-arrow-left text-2xl lg:text-3xl"></i>
       </button>
     </div>
