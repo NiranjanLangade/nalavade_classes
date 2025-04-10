@@ -37,9 +37,6 @@ const DirectorsMessage: React.FC = () => {
 >
   <i className="fas fa-arrow-left text-2xl lg:text-3xl"></i>
 </button>
-
-        <i className="fas fa-arrow-left text-2xl lg:text-3xl"></i>
-      </button>
     </div>
   );
 };
