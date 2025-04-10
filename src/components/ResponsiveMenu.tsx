@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import React from 'react';
 
-// ✅ Define the props type
+
 interface ResponsiveMenuProps {
   open: boolean;
 }
