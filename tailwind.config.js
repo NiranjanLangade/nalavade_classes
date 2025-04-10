@@ -1,7 +1,14 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ['./src/**/*.{js,ts,jsx,tsx}'],
+    content: [
+      './src/app/**/*.{js,ts,jsx,tsx}',
+      './src/components/**/*.{js,ts,jsx,tsx}',
+    ],
     theme: {
       extend: {
+        fontFamily:{
+            Rokkitt:["Rokkitt", "serif"]
+        },
         container:{
             center:true,
             padding:{
@@ -14,10 +21,6 @@ module.exports = {
         colors: {
           primary: '#FFBA41',
           secondary: '#00537B',
-        },
-        fontFamily: {
-          sans: ['Inter', 'sans-serif'],
-          serif: ['Merriweather', 'serif'],
         },
       },
     },
