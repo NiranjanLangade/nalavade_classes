@@ -31,7 +31,7 @@ const Inspiration: React.FC = () => {
 
         {/* Content Section */}
         <div className="w-full lg:w-4/5 flex flex-col justify-center px-6 lg:px-40 py-8">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">Director's Message</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">Our Inspiration</h2>
           <p className="text-lg lg:text-xl leading-relaxed text-gray-700">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
             libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu
