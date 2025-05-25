@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
-import { useRouter } from "next/navigation"; // 👈 useRouter for App Router
+import { useRouter } from "next/navigation";
 
 const DirectorsMessage: React.FC = () => {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col lg:flex-row h-auto lg:h-screen relative">
-      {/* Image Section */}
+    <div className="flex flex-col lg:flex-row h-screen">
+      {/* Left Side - Image */}
       <div className="w-full lg:w-2/5 h-64 lg:h-full">
         <img
           src="/DirectorsMessage.png"
@@ -16,27 +16,32 @@ const DirectorsMessage: React.FC = () => {
         />
       </div>
 
-      {/* Content Section */}
-      <div className="relative w-full lg:w-4/5 flex flex-col justify-center px-6 lg:px-40 py-8">
-        <h2 className="text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">Director's Message</h2>
+      {/* Right Side - Content */}
+      <div className="w-full lg:w-3/5 bg-white px-6 py-6 lg:py-10 lg:px-16 flex flex-col justify-start">
+        {/* Back Button */}
+        <button
+          onClick={() => router.back()}
+          aria-label="Go back"
+          title="Go back"
+          className="text-3xl text-black w-fit mb-6"
+        >
+          ←
+        </button>
+
+        {/* Title */}
+        <h2 className="text-3xl lg:text-4xl font-semibold mb-4">
+          Director's Message
+        </h2>
+
+        {/* Paragraph */}
         <p className="text-lg lg:text-xl leading-relaxed text-gray-700">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
-          libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu
-          ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus
-          urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam,
-          semper iaculis condimentum ac, vestibulum eu nisl.
+          Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero
+          et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora
+          torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis
+          condimentum lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis
+          condimentum ac, vestibulum eu nisl.
         </p>
       </div>
-
-      {/* Back Button */}
-      <button
-  onClick={() => router.back()}
-  aria-label="Go back"
-  title="Go back"
-  className="absolute top-4 right-4 lg:top-16 lg:right-28 text-gray-500 hover:text-gray-800"
->
-  <i className="fas fa-arrow-left text-2xl lg:text-3xl"></i>
-</button>
     </div>
   );
 };
