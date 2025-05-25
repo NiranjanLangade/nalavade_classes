@@ -23,7 +23,7 @@ const Teachers: React.FC = () => {
         {/* Image Section */}
         <div className="w-full lg:w-2/5 h-64 lg:h-full">
           <img
-            src="/teachers.png"
+            src="/Teachers.png"
             alt="Director"
             className="w-full h-full object-cover"
           />
