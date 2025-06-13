@@ -20,7 +20,7 @@ const Home: React.FC = () => {
         <HeroSection/>
         <Aboutcompo/>
         <Courses/>
-        <Why/>y
+        <Why/>
         <ResultSection bgColor="bg-secondary" />   {/* Dark Background */}
         <ResultSection bgColor="bg-white text-black" />  {/* White Background with Black Text */}
         <ResultSection bgColor="bg-secondary" />   {/* Dark Background */}

@@ -43,7 +43,7 @@ const Courses = () => {
                   src={course.image}
                   alt={course.title}
                   fill  // ✅ Instead of layout="fill"
-                  className="object-cover rounded-t-lg" // ✅ Instead of objectFit="cover"
+                  className="object-contain rounded-t-lg" // ✅ Instead of objectFit="cover"
                 />
               </div>
               <div className="mt-4">
