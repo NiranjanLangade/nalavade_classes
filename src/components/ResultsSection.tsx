@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const results = [
   { image: "/images/student1.png" },
-  { image: "/images/student1.png" },
+  { image: "/images/Boards.png" },
   { image: "/images/student1.png" },
   { image: "/images/student1.png" },
   { image: "/images/student1.png" },
@@ -12,14 +12,25 @@ const results = [
 
 const ResultSection = ({ bgColor = "bg-secondary" }) => {
   const [index, setIndex] = useState(0);
-  const itemsPerView = 3;
+  const [itemsPerView, setItemsPerView] = useState(3);
 
+  // Detect screen size for responsiveness
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [index]);
+    const updateItemsPerView = () => {
+      if (window.innerWidth < 640) {
+        setItemsPerView(1); // Mobile
+      } else {
+        setItemsPerView(3); // Desktop
+      }
+    };
+
+    updateItemsPerView();
+    window.addEventListener("resize", updateItemsPerView);
+    return () => window.removeEventListener("resize", updateItemsPerView);
+  }, []);
+
+  const isDarkBackground =
+    bgColor.includes("secondary") || bgColor.includes("blue") || bgColor.includes("dark");
 
   const prevSlide = () => {
     setIndex((prev) =>
@@ -31,7 +42,13 @@ const ResultSection = ({ bgColor = "bg-secondary" }) => {
     setIndex((prev) => (prev + 1) % results.length);
   };
 
-  // Circularly select 3 items
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % results.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   const visibleItems = Array.from({ length: itemsPerView }).map((_, i) => {
     const itemIndex = (index + i) % results.length;
     return results[itemIndex];
@@ -42,12 +59,16 @@ const ResultSection = ({ bgColor = "bg-secondary" }) => {
       <h2 className="text-3xl font-bold text-center mb-8">Our Achievers</h2>
 
       <div className="w-full max-w-6xl px-4 flex justify-center">
-        <div className="flex gap-6 w-full justify-center">
+        <div className="flex gap-6 w-full justify-center items-center transition-all duration-500">
           {visibleItems.map((result, i) => (
             <div
               key={i}
-              className={`w-1/3 transition-transform transform ${
-                i === 1 ? "scale-110" : "scale-90 opacity-60"
+              className={`w-full sm:w-1/3 transition-transform transform ${
+                i === Math.floor(itemsPerView / 2)
+                  ? "scale-110"
+                  : itemsPerView === 1
+                  ? "scale-100"
+                  : "scale-90 opacity-60"
               } flex justify-center`}
             >
               <img
@@ -60,35 +81,48 @@ const ResultSection = ({ bgColor = "bg-secondary" }) => {
         </div>
       </div>
 
-      {/* Controls */}
+      {/* Navigation & Indicators */}
       <div className="flex justify-center items-center mt-8 gap-4">
+        {/* Previous */}
         <button
+          type="button"
           onClick={prevSlide}
-          className="p-3 bg-white bg-opacity-20 backdrop-blur-lg rounded-full shadow-md hover:bg-opacity-40 transition"
+          aria-label="Previous slide"
+          className={`p-3 ${
+            isDarkBackground ? "bg-white bg-opacity-20" : "bg-black bg-opacity-10"
+          } backdrop-blur-lg rounded-full shadow-md hover:bg-opacity-40 transition`}
         >
-          <ChevronLeft size={24} className="text-white" />
+          <ChevronLeft size={24} className={isDarkBackground ? "text-white" : "text-black"} />
         </button>
 
+        {/* Dots */}
         <div className="flex gap-2">
-          {Array.from({
-            length: Math.ceil(results.length / itemsPerView),
-          }).map((_, i) => (
+          {Array.from({ length: results.length }).map((_, i) => (
             <div
               key={i}
-              className={`h-3 w-3 rounded-full ${
-                i === Math.floor(index / itemsPerView)
-                  ? "bg-white"
-                  : "bg-white bg-opacity-50"
+              className={`h-3 w-3 rounded-full transition-all duration-300 ${
+                i === index
+                  ? isDarkBackground
+                    ? "bg-white"
+                    : "bg-black"
+                  : isDarkBackground
+                  ? "bg-white bg-opacity-50"
+                  : "bg-black bg-opacity-30"
               }`}
             />
           ))}
         </div>
 
+        {/* Next */}
         <button
+          type="button"
           onClick={nextSlide}
-          className="p-3 bg-white bg-opacity-20 backdrop-blur-lg rounded-full shadow-md hover:bg-opacity-40 transition"
+          aria-label="Next slide"
+          className={`p-3 ${
+            isDarkBackground ? "bg-white bg-opacity-20" : "bg-black bg-opacity-10"
+          } backdrop-blur-lg rounded-full shadow-md hover:bg-opacity-40 transition`}
         >
-          <ChevronRight size={24} className="text-white" />
+          <ChevronRight size={24} className={isDarkBackground ? "text-white" : "text-black"} />
         </button>
       </div>
     </div>
