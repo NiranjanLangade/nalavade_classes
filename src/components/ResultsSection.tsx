@@ -1,7 +1,16 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const results = [
+interface ResultItem {
+  image: string;
+}
+
+interface ResultSectionProps {
+  results?: ResultItem[];
+  bgColor?: string;
+}
+
+const defaultResults: ResultItem[] = [
   { image: "/images/student1.png" },
   { image: "/images/Boards.png" },
   { image: "/images/student1.png" },
@@ -10,18 +19,14 @@ const results = [
   { image: "/images/student1.png" },
 ];
 
-const ResultSection = ({ bgColor = "bg-secondary" }) => {
+const ResultSection = ({ results = defaultResults, bgColor = "bg-secondary" }: ResultSectionProps) => {
   const [index, setIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3);
 
-  // Detect screen size for responsiveness
+  // Handle screen size for responsiveness
   useEffect(() => {
     const updateItemsPerView = () => {
-      if (window.innerWidth < 640) {
-        setItemsPerView(1); // Mobile
-      } else {
-        setItemsPerView(3); // Desktop
-      }
+      setItemsPerView(window.innerWidth < 640 ? 1 : 3);
     };
 
     updateItemsPerView();
@@ -47,7 +52,7 @@ const ResultSection = ({ bgColor = "bg-secondary" }) => {
       setIndex((prev) => (prev + 1) % results.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [results.length]);
 
   const visibleItems = Array.from({ length: itemsPerView }).map((_, i) => {
     const itemIndex = (index + i) % results.length;
@@ -81,21 +86,19 @@ const ResultSection = ({ bgColor = "bg-secondary" }) => {
         </div>
       </div>
 
-      {/* Navigation & Indicators */}
+      {/* Controls */}
       <div className="flex justify-center items-center mt-8 gap-4">
-        {/* Previous */}
         <button
           type="button"
           onClick={prevSlide}
           aria-label="Previous slide"
           className={`p-3 ${
-            isDarkBackground ? "bg-white bg-opacity-20" : "bg-black bg-opacity-10"
+            isDarkBackground ? "bg-white bg-opacity-20" : "bg-secondary bg-opacity-10"
           } backdrop-blur-lg rounded-full shadow-md hover:bg-opacity-40 transition`}
         >
-          <ChevronLeft size={24} className={isDarkBackground ? "text-white" : "text-black"} />
+          <ChevronLeft size={24} className={isDarkBackground ? "text-white" : "text-secondary"} />
         </button>
 
-        {/* Dots */}
         <div className="flex gap-2">
           {Array.from({ length: results.length }).map((_, i) => (
             <div
@@ -104,25 +107,24 @@ const ResultSection = ({ bgColor = "bg-secondary" }) => {
                 i === index
                   ? isDarkBackground
                     ? "bg-white"
-                    : "bg-black"
+                    : "bg-secondary"
                   : isDarkBackground
                   ? "bg-white bg-opacity-50"
-                  : "bg-black bg-opacity-30"
+                  : "bg-secondary bg-opacity-30"
               }`}
             />
           ))}
         </div>
 
-        {/* Next */}
         <button
           type="button"
           onClick={nextSlide}
           aria-label="Next slide"
           className={`p-3 ${
-            isDarkBackground ? "bg-white bg-opacity-20" : "bg-black bg-opacity-10"
+            isDarkBackground ? "bg-white bg-opacity-20" : "bg-secondary bg-opacity-10"
           } backdrop-blur-lg rounded-full shadow-md hover:bg-opacity-40 transition`}
         >
-          <ChevronRight size={24} className={isDarkBackground ? "text-white" : "text-black"} />
+          <ChevronRight size={24} className={isDarkBackground ? "text-white" : "text-secondary"} />
         </button>
       </div>
     </div>
