@@ -22,13 +22,21 @@ const jeeList = [
     {image:"/images/jee/one.jpg"}
 ];
 const neetList = [
-    {image:"/images/neet/one.png"}
+    {image:"/images/neet/one.png"},
+    {image:"/images/neet/two.png"},
+    {image:"/images/neet/three.png"},
+    {image:"/images/neet/four.png"},
 ];
 const sscList = [
-    {image:"/images/ssc/one.png"}
+    {image:"/images/ssc/one.png"},
+    {image:"/images/ssc/two.png"},
+    {image:"/images/ssc/three.png"},
 ];
 const cetList = [
-    {image:"/images/cet/one.png"}
+    {image:"/images/cet/one.png"},
+    {image:"/images/cet/two.png"},
+    {image:"/images/cet/three.png"},
+    {image:"/images/cet/four.png"},
 ];
 
 
