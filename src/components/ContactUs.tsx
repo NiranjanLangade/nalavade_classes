@@ -11,7 +11,7 @@ export default function ContactUs() {
   // Example: NEXT_PUBLIC_WHATSAPP_NUMBER=919876543210
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919999999999";
+    const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919561350845";
     const text = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
     const encoded = encodeURIComponent(text);
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
