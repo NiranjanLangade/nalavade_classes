@@ -1,12 +1,13 @@
 import React from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Courses from '@/components/Courses'
 
 const page = () => {
   return (
     <div>
         <Navbar/>
-        <h1>Courses</h1>
+        <Courses/>
         <Footer/>
     </div>
   )

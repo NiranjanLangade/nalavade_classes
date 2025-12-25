@@ -9,7 +9,7 @@ const page = () => {
   return (
     <div>
         <Navbar/>
-        =<Aboutcompo/>
+        <Aboutcompo/>
         <Footer/>
     </div>
   )

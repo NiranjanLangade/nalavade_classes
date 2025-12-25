@@ -7,9 +7,9 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { title: "Happy Students", value: "150+", borderRight: true },
+  { title: "Happy Students", value: "12k+", borderRight: true },
   { title: "Years of Expirence", value: "34+", borderRight: true },
-  { title: "Expert Teachers", value: "10+", borderRight: true },
+  { title: "Expert Facultiess", value: "15+", borderRight: true },
 //   { title: "Partners", value: "30+" },
 ];
 

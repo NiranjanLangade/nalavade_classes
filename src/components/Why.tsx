@@ -38,7 +38,7 @@ const Why = () => {
           </div>
           <div className="flex items-center space-x-3">
             <FaClock className="text-secondary text-xl" />
-            <span className="text-gray-700 font-medium">Online Test-series</span>
+            <span className="text-gray-700 font-medium">Online/Offline Test-series</span>
           </div>
           <div className="flex items-center space-x-3">
             <FaDollarSign className="text-secondary text-xl" />

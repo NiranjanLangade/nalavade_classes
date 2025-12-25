@@ -1,7 +1,14 @@
-import React from "react";
+"use client";
+
+import React, { useState, FormEvent } from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
 const Footer: React.FC = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+
   return (
     <footer className="bg-gradient-to-b from-[#00537B] to-[#013D59] text-white py-12 px-0">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28 w-full px-10">
@@ -57,30 +64,54 @@ const Footer: React.FC = () => {
         {/* Right Side - Get in Touch Form */}
         <div>
           <h2 className="text-2xl font-bold text-yellow-400">Get in Touch</h2>
-          <form className="mt-6 space-y-6">
+          {/*
+            The form will open WhatsApp (web or app) with a prefilled message.
+            Set NEXT_PUBLIC_WHATSAPP_NUMBER in .env.local (no plus sign, include country code),
+            e.g. NEXT_PUBLIC_WHATSAPP_NUMBER=919876543210
+          */}
+          <form
+            className="mt-6 space-y-6"
+            onSubmit={(e: FormEvent) => {
+              e.preventDefault();
+              const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919561350845";
+              const text = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`;
+              const encoded = encodeURIComponent(text);
+              const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+              window.open(url, "_blank");
+            }}
+          >
             <input
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               type="text"
               placeholder="Name"
               className="w-full bg-transparent border-b border-gray-400 focus:outline-none py-2 text-white"
             />
             <input
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               type="email"
               placeholder="G-mail"
               className="w-full bg-transparent border-b border-gray-400 focus:outline-none py-2 text-white"
             />
             <input
+              name="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               type="tel"
               placeholder="Phone"
               className="w-full bg-transparent border-b border-gray-400 focus:outline-none py-2 text-white"
             />
             <textarea
+              name="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               placeholder="Message"
               className="w-full bg-transparent border-b border-gray-400 focus:outline-none py-2 text-white"
             />
-            <button
-              type="submit"
-              className="bg-yellow-400 text-black px-6 py-2 rounded-lg mt-3"
-            >
+            <button type="submit" className="bg-yellow-400 text-black px-6 py-2 rounded-lg mt-3">
               Send
             </button>
           </form>
