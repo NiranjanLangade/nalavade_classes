@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <Head>
         <title>Nalawade Classes</title>
         <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet"
         />
         <link
@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         />
       </Head>
-      <body>
+      <body className="font-poppins antialiased">
         {/* <Navbar /> */}
         <main>{children}</main>
       </body>

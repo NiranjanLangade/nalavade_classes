@@ -31,12 +31,13 @@ const Footer: React.FC = () => {
           <div className="mt-6 space-y-4">
             <div>
               <h3 className="font-bold">CONTACT INFO</h3>
-              <p className="text-gray-300">abc@gmail.com</p>
-              <p className="text-gray-300">+91 68712607</p>
+              <p className="text-gray-300">nalavadeclasses@gmail.com</p>
+              <p className="text-gray-300">+91 7709799996 / +91 9923389996</p>
             </div>
             <div>
               <h3 className="font-bold">ADDRESS</h3>
-              <p className="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p className="text-gray-300">Prabhukunj 24, Deshmukh colony, Opposite to Civil hospital, 
+Satara-415001</p>
             </div>
             <div>
               <h3 className="font-bold">SUPPORT</h3>
@@ -73,7 +74,7 @@ const Footer: React.FC = () => {
             className="mt-6 space-y-6"
             onSubmit={(e: FormEvent) => {
               e.preventDefault();
-              const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919561350845";
+              const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "917709799996";
               const text = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`;
               const encoded = encodeURIComponent(text);
               const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;

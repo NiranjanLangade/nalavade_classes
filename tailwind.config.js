@@ -6,17 +6,18 @@ module.exports = {
     ],
     theme: {
       extend: {
-        fontFamily:{
-            Rokkitt:["Rokkitt", "serif"]
+        fontFamily: {
+            poppins: ["Poppins", "sans-serif"],
+            rokkitt: ["Rokkitt", "serif"],
         },
-        container:{
-            center:true,
-            padding:{
-                DEFAULT: '1 rem',
-                sm:'2rem',
-                lg:'4rem',
-                '2xl' : '6rem'
-            }
+        container: {
+            center: true,
+            padding: {
+                DEFAULT: '1rem',
+                sm: '2rem',
+                lg: '4rem',
+                '2xl': '6rem',
+            },
         },
         colors: {
           primary: '#FFBA41',
