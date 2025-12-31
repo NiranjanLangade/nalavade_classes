@@ -6,7 +6,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/f
 const Footer: React.FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [studentClass, setStudentClass] = useState("");
   const [message, setMessage] = useState("");
 
   return (
@@ -75,7 +75,7 @@ Satara-415001</p>
             onSubmit={(e: FormEvent) => {
               e.preventDefault();
               const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "917709799996";
-              const text = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`;
+              const text = `Name: ${name}\nEmail: ${email}\nClass: ${studentClass}\nMessage: ${message}`;
               const encoded = encodeURIComponent(text);
               const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
               window.open(url, "_blank");
@@ -98,11 +98,11 @@ Satara-415001</p>
               className="w-full bg-transparent border-b border-gray-400 focus:outline-none py-2 text-white"
             />
             <input
-              name="phone"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              type="tel"
-              placeholder="Phone"
+              name="studentClass"
+              value={studentClass}
+              onChange={(e) => setStudentClass(e.target.value)}
+              type="text"
+              placeholder="Class (e.g., 10, 12, JEE)"
               className="w-full bg-transparent border-b border-gray-400 focus:outline-none py-2 text-white"
             />
             <textarea
