@@ -33,11 +33,16 @@ const DirectorsMessage: React.FC = () => {
         <div className="w-full lg:w-4/5 flex flex-col justify-center px-6 lg:px-40 py-8">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">Director's Message</h2>
           <p className="text-lg lg:text-xl leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
-            libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu
-            ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus
-            urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam,
-            semper iaculis condimentum ac, vestibulum eu nisl.
+            Welcome to Nalawade Classes. For over a decade we have been committed to
+            nurturing curiosity, discipline, and academic excellence. Our experienced
+            faculty deliver focused lessons, personalized feedback, and regular assessments
+            to build strong fundamentals and exam confidence. We emphasize small batches,
+            comprehensive materials, and frequent mock tests to track progress and close gaps.
+            Beyond scores, we cultivate resilience, integrity, and leadership so students
+            thrive in studies and life. Visit us to experience our supportive, trusted
+            learning environment—together we’ll turn aspirations into achievements today.
+            <br />
+            <span className="font-semibold">— Director, Nalawade Classes</span>
           </p>
         </div>
       </div>

@@ -23,7 +23,7 @@ const Inspiration: React.FC = () => {
         {/* Image Section */}
         <div className="w-full lg:w-2/5 h-64 lg:h-full">
           <img
-            src="/Inspiration.png"
+            src="/das_mam.jpeg"
             alt="Director"
             className="w-full h-full object-cover"
           />
@@ -33,11 +33,7 @@ const Inspiration: React.FC = () => {
         <div className="w-full lg:w-4/5 flex flex-col justify-center px-6 lg:px-40 py-8">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4 lg:mb-6">Our Inspiration</h2>
           <p className="text-lg lg:text-xl leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
-            libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu
-            ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus
-            urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam,
-            semper iaculis condimentum ac, vestibulum eu nisl.
+            "A tribute to a visionary: Mrs. Ivy H. Das. To the woman who taught Satara that education without discipline is incomplete. Your presence in the classrooms of the 90s was more than just teaching; it was the sculpting of character. Nalavade Classes stands today as a living tribute to your high standards, your firm mentorship, and your belief in every student's potential. We walk the path you cleared for us."
           </p>
         </div>
       </div>
