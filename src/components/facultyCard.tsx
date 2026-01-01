@@ -24,13 +24,13 @@ export default function FacultyCard({ faculty }: { faculty: Faculty }) {
 
         {/* Image with gradient ring */}
         <div className="mt-1 p-1 rounded-full bg-gradient-to-br from-[#FFBA41] to-[#00537B]">
-          <div className="rounded-full bg-white p-1">
+          <div className="w-[110px] h-[110px] rounded-full bg-white overflow-hidden flex items-center justify-center">
             <Image
               src={faculty.image}
               alt={faculty.name}
               width={110}
               height={110}
-              className="rounded-full object-cover"
+              className="w-full h-full object-fill"
               priority={false}
             />
           </div>

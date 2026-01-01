@@ -41,6 +41,11 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li>
+                                <Link href="/gallery" className="py-1 px-3 hover:text-primary transition-all duration-200">
+                                    Gallery
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href="/contact" className="py-1 px-3 hover:text-primary transition-all duration-200">
                                     Contact Us
                                 </Link>

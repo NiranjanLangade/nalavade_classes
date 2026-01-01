@@ -35,4 +35,18 @@ export const facultyList: Faculty[] = [
     experience: "15+ Years Experience",
     image: "/faculty/vinay_sir.png",
   },
+    {
+    name: "Rajendra Sir",
+    subject: "Physics-Chemistry",
+    education: "Mtech Chemical Engineering",
+    experience: "12+ Years Experience",
+    image: "/faculty/rajendra_sir.png",
+  },
+  {
+    name: "Raghav Sir",
+    subject: "Physics",
+    education: "Mtech, NIT Surat",
+    experience: "16+ Years Experience",
+    image: "/faculty/raghav_sir.png",
+  },
 ];
