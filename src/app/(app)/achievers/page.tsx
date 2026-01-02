@@ -4,6 +4,18 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ResultSection from '@/components/ResultsSection'
 
+export const metadata = {
+  title: "Nalavade Classes – Home",
+  description: "Best result in NEET & CET in satara | Nalavade Classes",
+  openGraph: {
+    title: "Nalavade Classes",
+    description:
+      "Top quality coaching and academic support for competitive exams",
+    url: "https://www.nalavadeclasses.in/home",
+    siteName: "Nalavade Classes",
+  },
+};
+
 const jeeList = [
     {image:"/images/jee/one.jpg"}
 ];

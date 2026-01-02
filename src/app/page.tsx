@@ -6,11 +6,20 @@ import HeroSection from "../components/HeroSection";
 import Courses from "../components/Courses";
 import Why from "../components/Why";
 import Footer from "../components/Footer";
-import ResultsSection from "../components/ResultsSection";
-import Testimonials from "../components/Testimonial";
-import TestimonialSection from "../components/Testimonial";
 import Testimonial from "../components/Testimonial";
 import ResultSection from "../components/ResultsSection";
+
+export const metadata = {
+  title: "Nalavade Classes – Home",
+  description: "Best coaching classes in Satara | Nalavade Classes",
+  openGraph: {
+    title: "Nalavade Classes",
+    description:
+      "Top quality coaching and academic support for competitive exams",
+    url: "https://www.nalavadeclasses.in/home",
+    siteName: "Nalavade Classes",
+  },
+};
 
 // const imageList = [
 //   { image: "/images/one.png" },
