@@ -6,11 +6,9 @@ import HeroSection from "../components/HeroSection";
 import Courses from "../components/Courses";
 import Why from "../components/Why";
 import Footer from "../components/Footer";
-import ResultsSection from "../components/ResultsSection";
-import Testimonials from "../components/Testimonial";
-import TestimonialSection from "../components/Testimonial";
 import Testimonial from "../components/Testimonial";
 import ResultSection from "../components/ResultsSection";
+
 
 // const imageList = [
 //   { image: "/images/one.png" },

@@ -4,6 +4,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ResultSection from '@/components/ResultsSection'
 
+
+
 const jeeList = [
     {image:"/images/jee/one.jpg"}
 ];

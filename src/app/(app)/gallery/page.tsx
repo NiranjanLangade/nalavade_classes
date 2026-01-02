@@ -5,6 +5,8 @@ import Footer from '@/components/Footer';
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+
+
 const categories = [
   "All",
   "Classrooms",

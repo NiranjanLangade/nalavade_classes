@@ -1,10 +1,20 @@
-"use client";
 
 import "./globals.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Navbar from "../components/Navbar";
 import { ReactNode } from "react";
+import type { Metadata } from 'next';
 import Head from "next/head";
+
+export const metadata: Metadata = {
+  title: "Nalavade Classes – Home",
+  description: "Best coaching classes in Satara | Nalavade Classes",
+  openGraph: {
+    title: "Nalavade Classes",
+    description: "Best coaching classes in Satara",
+    type: "website",
+  },
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
