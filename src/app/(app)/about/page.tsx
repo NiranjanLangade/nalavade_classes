@@ -5,7 +5,6 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Aboutcompo from '@/components/Aboutcompo'
 
-
 const page = () => {
   return (
     <div>

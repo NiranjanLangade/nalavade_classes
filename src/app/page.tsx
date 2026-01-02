@@ -9,7 +9,6 @@ import Footer from "../components/Footer";
 import Testimonial from "../components/Testimonial";
 import ResultSection from "../components/ResultsSection";
 
-
 // const imageList = [
 //   { image: "/images/one.png" },
 //   { image: "/images/two.png" },
